@@ -1,0 +1,23 @@
+{
+   "users": [],
+   "projects": [
+      {
+         "id": 1,
+         "user": "Munira",
+         "title": "CLI tool",
+         "description": "build python cli",
+         "due_date": "2026-04-12",
+         "tasks": [
+            {
+               "title": "create commands",
+               "status": "pending"
+            },
+            {
+               "title": "create commands",
+               "status": "pending"
+            }
+         ]
+      }
+   ],
+   "tasks": []
+}
