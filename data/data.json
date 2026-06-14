@@ -1,5 +1,10 @@
 {
-   "users": [],
+   "users": [
+      {
+         "name": "Munira",
+         "email": "munira@hassan.com"
+      }
+   ],
    "projects": [
       {
          "id": 1,
@@ -10,14 +15,24 @@
          "tasks": [
             {
                "title": "create commands",
-               "status": "pending"
-            },
+               "status": "completed"
+            }
+         ]
+      },
+      {
+         "id": 2,
+         "user": "Maryam",
+         "title": "To do tasks",
+         "description": "biuld to do list app",
+         "due_date": "2026-04-16",
+         "tasks": [
             {
-               "title": "create commands",
-               "status": "pending"
+               "title": "python cli with subcommands",
+               "status": "pending",
+               "assigned_to": "Maryam"
             }
          ]
       }
-   ],
-   "tasks": []
+   ]
+   
 }

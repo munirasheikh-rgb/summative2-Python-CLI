@@ -102,23 +102,26 @@ class Task:
       if self not in user.tasks:
         user.tasks.append(self)
 
-u1 = User.create_user("Munira","'munira@hassan.com")
-u2 = User.create_user("Maryam","maryam@05.com")
-print(u1.id)
-print(u1.name)
-print(User.list_user())
+if __name__ == "__main__"  :      
 
-p1 = Project("Python CLI tool","project management tool","2026-06-12")
-u1.add_projects(p1)
-print(u1.projects[0].title)
+   u1 = User.create_user("Munira","'munira@hassan.com")
+   u2 = User.create_user("Maryam","maryam@05.com")
+   print(u1.id)
+   print(u1.name)
+   print(User.list_user())
 
-t1 = Task("create project commands","complete")
-p1.add_task(t1)
-print(p1.tasks[0].title)
+   p1 = Project("Python CLI tool","project management tool","2026-06-12")
+   u1.add_projects(p1)
+   print(u1.projects[0].title)
 
-t1.assign_user(u1)
-print(t1.assigned_to.name)
-print(u1.tasks[0].title)
-      
-t1.mark_task_as_complete()
-print(t1.status)
+   t1 = Task("create project commands","complete")
+   p1.add_task(t1)
+   print(p1.tasks[0].title)
+
+   t1.assign_user(u1)
+   print(t1.assigned_to.name)
+   print(u1.tasks[0].title)
+         
+   t1.mark_task_as_complete()
+   print(t1.status)
+   

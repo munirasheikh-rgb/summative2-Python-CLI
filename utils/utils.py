@@ -1,5 +1,5 @@
 import json 
-DATA_FILE = "data.json"
+DATA_FILE = "data/data.json"
 
 def save_data(data):
     with open(DATA_FILE, "w") as file:
@@ -12,5 +12,5 @@ def load_data():
     except FileNotFoundError:
        return{"users":[],
               "projects":[],
-              "tasks":[] }
+               }
            
