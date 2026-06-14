@@ -1,7 +1,9 @@
 import argparse
 from utils.utils import load_data,save_data
-
+from tabulate import tabulate
 #from models.objects import User,Project,Task
+
+#creates a new user and saves to data.json
 def create_user(args):
     data = load_data()
     user = {"name": args.name,
@@ -11,7 +13,7 @@ def create_user(args):
     print(f"User {args.name} created")
 
 
-
+#Adds a new project to a user
 def add_projects(args):
    data = load_data()
    project ={
@@ -27,6 +29,7 @@ def add_projects(args):
    #print(type(data))
    print(f"project added:{args.title} to {args.user}")
 
+#add a task to a project using project id
 def add_task(args):
     data = load_data()
     task = {"title":args.title,
@@ -41,7 +44,7 @@ def add_task(args):
         
     print("Project not found")
         
-
+#marks task as complete using its title
 def mark_task_as_complete(args):
         data = load_data()
         for project in data["projects"]:
@@ -53,6 +56,7 @@ def mark_task_as_complete(args):
                 return
         print("Task not found") 
 
+#assign a task to a user
 def assign_user(args):
     data = load_data()
     for project in data["projects"]:
@@ -62,13 +66,17 @@ def assign_user(args):
                 save_data(data)
                 print(f"Task {args.title} assigned to {args.user}")
                 return
-    print("Task not found")     
+    print("Task not found")  
 
+#displays all projects in table format
 def list_projects(args):
     data = load_data()
+    table = []
     for project in data["projects"]:
-        print(f"{project["id"]}:{project["title"]} - {project["user"]}")
-
+        table.append([project["id"],project["title"],project["user"],project["due_date"]])
+    print(tabulate(table,headers=["ID","Title","User","Due_date"]))
+    
+#displays all tasks inside a project
 def list_tasks(args):
     data = load_data() 
     for project in data["projects"]:
@@ -120,7 +128,7 @@ list_projects_parser.set_defaults(func=list_projects)
 list_task_parser = subparsers.add_parser("list-task" ,help="List all tasks")
 list_task_parser.set_defaults(func=list_tasks)
 
-
-args = parser.parse_args()
-args.func(args)
+if __name__ == "__main__":
+    args = parser.parse_args()
+    args.func(args)
 

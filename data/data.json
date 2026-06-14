@@ -3,6 +3,26 @@
       {
          "name": "Munira",
          "email": "munira@hassan.com"
+      },
+      {
+         "name": "Munira",
+         "email": "munira@hassan.com"
+      },
+      {
+         "name": "Munira",
+         "email": "munira@hassan.com"
+      },
+      {
+         "name": "Munira",
+         "email": "munira@hassan.com"
+      },
+      {
+         "name": "Munira",
+         "email": "munira@hassan.com"
+      },
+      {
+         "name": "Munira",
+         "email": "munira@hassan.com"
       }
    ],
    "projects": [
@@ -32,7 +52,22 @@
                "assigned_to": "Maryam"
             }
          ]
+      },
+      {
+         "id": 3,
+         "user": "Munira",
+         "title": "CLI tools",
+         "description": "build CLI project app",
+         "due_date": "2026-06-12",
+         "tasks": []
+      },
+      {
+         "id": 4,
+         "user": "Munira",
+         "title": "CLI tools",
+         "description": "build CLI project app",
+         "due_date": "2026-06-12",
+         "tasks": []
       }
    ]
-   
 }

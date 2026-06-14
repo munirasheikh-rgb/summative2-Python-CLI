@@ -2,7 +2,7 @@ class Person:
    def __init__(self,name,email):
       self.name = name
       self.email = email
-
+#user class inherits name & attributs from parent(person)
 class User(Person):
     users = []
     next_id = 1
@@ -14,7 +14,7 @@ class User(Person):
       self.tasks = []
 
     @classmethod
-    def create_user(cls,name,email):
+    def create_user(cls,name,email): #creates and stores a new user
        user = cls(name,email)
        cls.users.append(user)
        return user
@@ -27,7 +27,7 @@ class User(Person):
     def name(self):
        return self._name
     @name.setter
-    def name(self,value):
+    def name(self,value): #validates that name atrribute is not empty
        if value == "":
           raise ValueError("Name cannot be empty")
        self._name = value
@@ -35,7 +35,7 @@ class User(Person):
     
     def __str__(self):
       return f"{self.name}: {self.email}"
-    
+    #associates a project with a user(one-to-many)
     def add_projects(self,project):
        self.projects.append(project)
 
@@ -62,7 +62,7 @@ class Project:
    def __str__(self):
       return f"{self.title}"
 
-
+#adds task to the project(one-to many)
    def add_task(self,task):
       self.tasks.append(task)
 
@@ -92,11 +92,11 @@ class Task:
          raise ValueError("fill in the status")
       self._status = value
         
-
+#marks the task complete
    def mark_task_as_complete(self):  
       self.status = "completed"
       print(f"Task {self.title} marked as complete")
-
+#assign user to a task
    def assign_user(self,user):
       self.assigned_to = user
       if self not in user.tasks:
@@ -104,7 +104,7 @@ class Task:
 
 if __name__ == "__main__"  :      
 
-   u1 = User.create_user("Munira","'munira@hassan.com")
+   u1 = User.create_user("Munira","munira@hassan.com")
    u2 = User.create_user("Maryam","maryam@05.com")
    print(u1.id)
    print(u1.name)
