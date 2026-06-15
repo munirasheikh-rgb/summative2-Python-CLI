@@ -5,20 +5,12 @@
          "email": "munira@hassan.com"
       },
       {
-         "name": "Munira",
-         "email": "munira@hassan.com"
+         "name": "Alice",
+         "email": "alice@williams.com"
       },
       {
-         "name": "Munira",
-         "email": "munira@hassan.com"
-      },
-      {
-         "name": "Munira",
-         "email": "munira@hassan.com"
-      },
-      {
-         "name": "Munira",
-         "email": "munira@hassan.com"
+         "name": "Fredrick",
+         "email": "fred@johnson.com"
       },
       {
          "name": "Munira",
@@ -29,40 +21,60 @@
       {
          "id": 1,
          "user": "Munira",
-         "title": "CLI tool",
-         "description": "build python cli",
-         "due_date": "2026-04-12",
+         "title": "python CLI",
+         "description": "Build project management CLI",
+         "due_date": "2026-07-12",
          "tasks": [
             {
-               "title": "create commands",
-               "status": "completed"
+               "title": "Project management tool",
+               "status": "completed",
+               "assigned_to": "Munira"
             }
          ]
       },
       {
          "id": 2,
-         "user": "Maryam",
-         "title": "To do tasks",
-         "description": "biuld to do list app",
-         "due_date": "2026-04-16",
+         "user": "Munira",
+         "title": "To do List App",
+         "description": "Add's your todo's for daily",
+         "due_date": "2026-07-15",
          "tasks": [
             {
-               "title": "python cli with subcommands",
-               "status": "pending",
-               "assigned_to": "Maryam"
+               "title": "Add a functionality to add todo's ",
+               "status": "pending"
             }
          ]
       },
       {
          "id": 3,
-         "user": "Munira",
-         "title": "CLI tools",
-         "description": "build CLI project app",
-         "due_date": "2026-06-12",
-         "tasks": []
+         "user": "Alice",
+         "title": "To do List App",
+         "description": "Add's your todo's for daily",
+         "due_date": "2026-07-15",
+         "tasks": [
+            {
+               "title": "create mutiple tasks for a day",
+               "status": "completed",
+               "assigned_to": "Alice"
+            }
+         ]
       },
       {
          "id": 4,
+         "user": "Fredrick",
+         "title": "Modern school website",
+         "description": "Create students portal",
+         "due_date": "2025-07-25",
+         "tasks": [
+            {
+               "title": "A dashboard that contains students courses",
+               "status": "pending",
+               "assigned_to": "Fredrick"
+            }
+         ]
+      },
+      {
+         "id": 5,
          "user": "Munira",
          "title": "CLI tools",
          "description": "build CLI project app",

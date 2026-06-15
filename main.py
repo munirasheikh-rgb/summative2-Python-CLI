@@ -83,6 +83,12 @@ def list_tasks(args):
      print(f"Project:{project["title"]}")
      for task in project["tasks"]:
         print(f"{task["title"]} - {task["status"]}")
+#search projects assigned to a specific user
+def search_user_projects(args):
+    data = load_data()   
+    for project in data["projects"]:
+        if project["user"] == args.user:
+          print(f"{project["id"]} - {project["title"]}")      
 
 
                             
@@ -94,21 +100,21 @@ subparsers = parser.add_subparsers(required=True)
 
 create_parser = subparsers.add_parser("create-user", help="create a user")
 create_parser.add_argument("name")
-create_parser.add_argument("email")
+create_parser.add_argument("-e","--email")
 create_parser.set_defaults(func=create_user)
 
 
 add_project_parser = subparsers.add_parser("add-project", help="Add project to a user")
-add_project_parser.add_argument("user")
+add_project_parser.add_argument("-u","--user")
 add_project_parser.add_argument("title")
 add_project_parser.add_argument("description")
-add_project_parser.add_argument("due_date")
+add_project_parser.add_argument("-d","--due_date")
 add_project_parser.set_defaults(func=add_projects)
 
 addt_task_parser = subparsers.add_parser("add-task", help="Add task to a project")
 addt_task_parser.add_argument("project_id", type=int)
 addt_task_parser.add_argument("title")
-addt_task_parser.add_argument("status")
+addt_task_parser.add_argument("--status")
 addt_task_parser.set_defaults(func=add_task)
 
 
@@ -119,7 +125,7 @@ mark_parser.set_defaults(func=mark_task_as_complete)
 
 assign_parser = subparsers.add_parser("assign-user", help="Assign a user to a task")
 assign_parser.add_argument("title")
-assign_parser.add_argument("user")
+assign_parser.add_argument("-u","--user")
 assign_parser.set_defaults(func=assign_user)
 
 list_projects_parser = subparsers.add_parser("list-projects" ,help="List all projects")
@@ -128,6 +134,10 @@ list_projects_parser.set_defaults(func=list_projects)
 list_task_parser = subparsers.add_parser("list-task" ,help="List all tasks")
 list_task_parser.set_defaults(func=list_tasks)
 
+
+search_projects_parser = subparsers.add_parser("user-projects",help="list all projects assigned to a user")
+search_projects_parser.add_argument("--user")
+search_projects_parser.set_defaults(func=search_user_projects)
 if __name__ == "__main__":
     args = parser.parse_args()
     args.func(args)
