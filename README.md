@@ -17,7 +17,7 @@ A command-line task management application built with Python.
 ## Installation
 Clone the repository
   ```bash
-git clone https://github.com/munirasheikh-rgb/summative2-Python-CLI.git
+git clone https://github.com/munirasheikh-rgb/Python-CLI-Project.git
  ```
 Navigate to the project folder
   ```bash
